@@ -97,7 +97,7 @@ export default function Home() {
 		<button className="whatsappBtn" onClick={onWatsAppClick}><i className="fa fa-whatsapp"></i> <span className="whTxt">WhatsApp Us</span></button>
 		</div>
         <div className="call-sec">
-		<a className="whatsappBtn callbtn" href='tel:+91-6360783290'  ><i className="fa fa-phone"></i> <span className="whTxt">Call</span></a>
+		<a className="whatsappBtn callbtn" href='tel:+91-9632236736'  ><i className="fa fa-phone"></i> <span className="whTxt">Call</span></a>
 		</div>
 </div> 
     </>
