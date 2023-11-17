@@ -22,7 +22,7 @@
     width: 100%;
     /* background: white; */
     transition: 0.5sec;
-    background: #131921
+    background: #182838 
 }
 
 
@@ -70,10 +70,13 @@
 .right-logo img{
     height: 50px;
 }
+.right-logo h4{
+    font-size: 14px;
+}
 .logo-sec h4{
     color: #ffc107;
     font-size: 12px;
-    margin-top: -7px;
+    margin-top: -1px;
 }
 
 .Nav_link span{
@@ -127,7 +130,7 @@
         left: 0%;
         z-index: 10;
         width: 100%;
-        background: #131921;
+        background: #182838 ;
         transition: 0.5sec;
         /* padding: 10px; */
        
@@ -140,7 +143,7 @@
         position: fixed;
         right: -250px;
         top: 0;
-        background: #131921;
+        background: #182838 ;
         z-index: 20;
         transition: 0.5s;
         flex-direction: column;
@@ -162,19 +165,22 @@
         opacity: 100;
     }
     .llogo{
-        width: 64%;
+        width: 69%;
         justify-content: space-between;
         padding-left: 16px;
     }
     .right-logo{
         justify-content: space-between;
-        width: 55%;
+        width: 50%;
     }
     .right-logo img{
         height: 25px;
     }
     .right-logo h4{
-        font-size: 12px;
+        font-size: 10px;
+    }
+    .logo-sec{
+        width: 48%;
     }
     .logo-sec h4{
         color: #ffc107;

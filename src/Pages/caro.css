@@ -1,0 +1,9 @@
+.carousel-indicators [data-bs-target] {
+    border-radius: 100%;
+    width: 10px;
+    height: 10px;
+}
+
+.caro-height{
+    height: 52vh;
+}

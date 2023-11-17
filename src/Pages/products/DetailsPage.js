@@ -1,13 +1,30 @@
-import React from 'react'
+import React,{useState} from 'react'
 import {useLocation} from 'react-router-dom';
-// import image from "./image (5).png"
+import ModalPage from '../ModalPage';
 
 export default function DeatilsPage() {
   const location = useLocation();
-  console.log(location.state);
+  const [isOpenModal, setisOpenModal] = useState(false)
+  function onCallClick(){
+    setisOpenModal(true)
+  }
+  function modalClose(){
+    setisOpenModal(false)
+  }
+  function onModalSumbmit(){
+    setisOpenModal(false)
+    alert("summitted")
+  }
   return (
     <>
     <div className='main-container'>
+      {isOpenModal &&
+      <ModalPage
+       isOpenModal={isOpenModal}
+       modalClose={modalClose}
+       onModalSumbmit={onModalSumbmit}
+       />
+      }
         <div className='product-page'>
 
           <div className='left-part'>
@@ -64,8 +81,8 @@ export default function DeatilsPage() {
               <p className='spec-name'>Location <span className='spec-value'>India(Karnataka)</span></p>
               </div>
               <div class="banner-btn">
-            <button onClick={()=>{}}><span></span>REQUEST TO CALL</button>
-            <button onClick={()=>{}}><span></span>SEND ENQUERY</button>
+            <button onClick={onCallClick}><span></span>REQUEST TO CALL</button>
+            <button onClick={onCallClick}><span></span>SEND ENQUERY</button>
         </div>
           </div>
         </div>
