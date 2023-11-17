@@ -69,12 +69,13 @@
 .get-btn{ 
   padding: 6px 12px;
   color: #000;
-  background: #ffd814;
+  background: #dee2e6;
   border-radius: 8px;
   font-size: 10px;
   outline: none;
   border: none;
   margin-top: 10px;
+  font-weight: bold;
 }
 
 .banner-btn button{
@@ -331,7 +332,6 @@
 #service{
   width: 100%;
   background: lightgray;
-  margin-top: 20px;
 }
 .service-box{
   width: 80%;
@@ -531,7 +531,9 @@ hr{
 .spec-loc{
   margin-top: 20px;
 }
-
+.home-con{
+  background-color: #fbfbfb;
+}
 /* footer */
 .footer{
   background: #182838 0% 0% no-repeat padding-box;
@@ -691,6 +693,22 @@ margin-bottom: 14px;
   margin-left: 7px;
   margin-right: 6px;
 }
+/* Contact-form */
+.Contact-form{
+  width: 40%;
+  margin: auto;
+  margin-top: 15px;
+  /* background-color: #f8f9fa; */
+}
+.Contact-form h4{
+  text-align: center;
+}
+.form-groups{
+  width: 100%;
+}
+.sumbitbtn{
+  background: #ffd814;
+}
 @media screen and (max-width:770px){
 .cat-heading{
   margin: 10px 0;
@@ -700,6 +718,13 @@ margin-bottom: 14px;
   flex-basis: 48%;
   text-align: center;
   height: 395px;
+}
+.all-pro-name{
+  font-size: 12px;
+}
+.card-specs{
+  font-size: 10px;
+  margin-bottom: 4px;
 }
 .banner-btn button {
   width: auto;
@@ -725,7 +750,7 @@ margin-bottom: 14px;
   text-align: center;
 }
 .left-part img{
-  max-height: 100%;
+  max-height: 85%;
 }
 
 .right-part{
@@ -748,9 +773,7 @@ margin-bottom: 14px;
 {
   font-size: 10px;
 }
-.banner-btn{
-  margin-top: 20px;
-}
+
   .whatsapp-sec{
     bottom: 170px;
   }
@@ -773,4 +796,12 @@ margin-bottom: 14px;
 .whTxt{
   display: none;
 }
+
+.Contact-form{
+  width: 100%;
+  margin: auto;
+  margin-top: 15px;
 }
+}
+
+

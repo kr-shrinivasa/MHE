@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Routes, Route  } from "react-router-dom";
 import Home from './Pages/Home';
 import Sevices from './Pages/products/Services';
-import ContactForm from './Pages/ContactForm';
+import Contactus from './Pages/Contactus';
 import AllProducts from './Pages/products/AllProducts';
 import DeatilsPage from './Pages/products/DetailsPage';
 
@@ -20,7 +20,7 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/products" element={< AllProducts/>} />
         <Route path="/services" element={< Sevices/>} />
-        <Route path="/contact-us" element={< ContactForm/>} />
+        <Route path="/contact-us" element={< Contactus/>} />
         <Route path="/product-details" element={< DeatilsPage/>} />
       </Routes>
       <Footer/>

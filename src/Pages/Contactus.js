@@ -1,10 +1,15 @@
 import React from 'react'
+import ContactForm from "./ContactForm"
+import Map from './Map'
 
 export default function Contactus() {
   return (
     <>
-    <div>Contact Us</div>
-    <p>Materials Handling Solutions Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus voluptate provident porro tenetur modi hic harum maxime voluptates voluptatum illo quaerat assumenda, ipsam sit ea quo placeat? Cum, officia ipsum.</p>
+    <div className='Contact-form p-2'>
+      <h4>Contact Us</h4>
+      <ContactForm/>
+      </div>
+      <Map/>
     </>
   )
 }

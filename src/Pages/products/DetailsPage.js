@@ -8,6 +8,10 @@ export default function DeatilsPage() {
   function onCallClick(){
     setisOpenModal(true)
   }
+  function onWatsAppClick(){
+    //  setisClickOnWatsApp(!isClickOnWatsApp)
+    window.open("https://api.whatsapp.com/send?phone=916360783290", "_blank")
+}
   function modalClose(){
     setisOpenModal(false)
   }
@@ -49,7 +53,7 @@ export default function DeatilsPage() {
               <p className='spec-title'>Start from :<span className='p-span'> ₹ 1,20,000/<sup>pc</sup></span></p>
               <p className='spec-title'>MQQ :<span className='mqq'>1</span></p>
               </div>
-            <button className='get-btn' onClick={()=>{}}><span></span>Get Quotation</button>
+            <button className='get-btn' onClick={()=>{}}><span></span>Specifications</button>
             </div>
     
             <div className='p-specs'>
@@ -81,8 +85,8 @@ export default function DeatilsPage() {
               <p className='spec-name'>Location <span className='spec-value'>India(Karnataka)</span></p>
               </div>
               <div class="banner-btn">
-            <button onClick={onCallClick}><span></span>REQUEST TO CALL</button>
-            <button onClick={onCallClick}><span></span>SEND ENQUERY</button>
+            <button onClick={onWatsAppClick}><span></span>Chat With Us</button>
+            <button onClick={onCallClick}><span></span>Send Enquiry</button>
         </div>
           </div>
         </div>

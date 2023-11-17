@@ -1,15 +1,9 @@
 import React from 'react'
 import feature from "./image (5).png"
-// import pro1 from "../img/img-1.jpg"
-// import pro2 from "../img/img-2.jpg"
-// import pro3 from "../img/img-3.jpg"
-// import pro4 from "../img/pic-1.jpg"
-// import pro5 from "../img/pic-2.jpg"
-// import pro6 from "../img/pic-3.jpg"
 import Produts from './products/produts'
 import Services from "./products/Services"
 import CarouselPage  from './CarouselPage'
-// import $ from 'jquery';
+import Contactus from "./Contactus"
 
 
 
@@ -99,7 +93,10 @@ export default function Home() {
         <div className="call-sec">
 		<a className="whatsappBtn callbtn" href='tel:+91-9632236736'  ><i className="fa fa-phone"></i> <span className="whTxt">Call</span></a>
 		</div>
-</div> 
+</div>
+    <div className='home-con'>
+    <Contactus/>
+    </div>
     </>
 
   )

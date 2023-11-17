@@ -1,64 +1,95 @@
-import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
+import { useState,useRef } from 'react';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
+import emailjs from '@emailjs/browser';
 
 function FormExample() {
+  const data =useRef()
   const [validated, setValidated] = useState(false);
+  const [newobject, setnewobject] = useState({Fname:"",phone:"",email:"",state:"",city:"",desc:""})
 
+  const handleChange= (e)=>{
+    setnewobject({...newobject,[e.target.name]:e.target.value})
+  }
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    event.preventDefault();
     if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
+      console.log("inside if",newobject);
     }
-
     setValidated(true);
+
+    if(newobject.phone.length===10){
+      emailjs.sendForm('service_1530ghh', 'template_u0kfsei', data.current, 'rO4W70Ykb56rINQBX')
+      .then((result) => {
+          setnewobject({Fname:"",phone:"",email:"",state:"",city:"",desc:""})
+          alert("Submitted Successfully")
+      }, (error) => {
+          console.log(error.text);
+      });
+    }else{
+      alert("enter valid Phone number")
+    }
   };
+
 
   return (
     <>
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
-        <Form.Group as={Col} md="4" controlId="validationCustom01">
-          <Form.Label>Your Name</Form.Label>
+    
+    <Form ref={data} className='form-groups' noValidate validated={validated} onSubmit={handleSubmit}>
+        <Form.Group as={Col} md="12" controlId="validationCustom01">
+          <Form.Label className='mt-2'>Your Name</Form.Label>
           <Form.Control
             required
             type="text"
-            placeholder="Your Name"
+            name='Fname'
+            value={newobject.Fname}
+            onChange={handleChange} 
+            placeholder="Enter Your Name"
           />
           <Form.Control.Feedback type="invalid">
               Please Enter Your Name.
             </Form.Control.Feedback>
         </Form.Group>
-        
-        <Form.Group as={Col} md="4" controlId="validationCustomUsername">
-          <Form.Label>Your Email</Form.Label>
+        <Form.Group as={Col} md="12" controlId="validationCustomUsername">
+          <Form.Label className='mt-2'>Phone Number</Form.Label>
+          <InputGroup hasValidation>
+            <InputGroup.Text id="inputGroupPrepend">+91</InputGroup.Text>
+            <Form.Control
+              type="number"
+              onChange={handleChange} 
+              placeholder="Enter Phone Number"
+              aria-describedby="inputGroupPrepend"
+              required
+            value={newobject.phone}
+              name='phone'
+              maxLength={10}
+            />
+            <Form.Control.Feedback type="invalid">
+              Please Enter Your Phone Number.
+            </Form.Control.Feedback>
+          </InputGroup>
+        </Form.Group>
+        <Form.Group as={Col} md="12" controlId="validationCustomUsername">
+          <Form.Label className='mt-2'>Email</Form.Label>
           <InputGroup hasValidation>
             <InputGroup.Text id="inputGroupPrepend">@</InputGroup.Text>
             <Form.Control
               type="email"
-              placeholder="Your Eamil"
+              name='email'
+            value={newobject.email}
+              onChange={handleChange} 
+              placeholder="Enter Email"
               aria-describedby="inputGroupPrepend"
-              required
             />
-            <Form.Control.Feedback type="invalid">
-              Please Enter Your Email.
-            </Form.Control.Feedback>
           </InputGroup>
         </Form.Group>
-      <Row className="mb-3">
-        <Form.Group as={Col} md="6" controlId="validationCustom03">
-          <Form.Label>City</Form.Label>
-          <Form.Control type="text" placeholder="City" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
-        </Form.Group>
-        <Form.Group as={Col} md="3" controlId="validationCustom04">
-          <Form.Label>State</Form.Label>
-          <Form.Select aria-label="Default select example">
+        <Row>
+        <Form.Group as={Col} md="6" controlId="validationCustom04">
+          <Form.Label className='mt-2'>State</Form.Label>
+          <Form.Select aria-label="Default select example" onChange={handleChange} value={newobject.state} name='state'>
       <option>Select State</option>
       <option value="Andaman & Nicobar Islands" >Andaman & Nicobar Islands</option>
 				<option value="Andhra Pradesh" >Andhra Pradesh</option>
@@ -102,22 +133,19 @@ function FormExample() {
             Please provide a valid state.
           </Form.Control.Feedback>
         </Form.Group>
-        
-      </Row>
-      <Form.Group className="mb-3">
-        <Form.Check
-          required
-          label="Agree to terms and conditions"
-          feedback="You must agree before submitting."
-          feedbackType="invalid"
-        />
+        <Form.Group as={Col} md="6" controlId="validationCustom03">
+          <Form.Label className='mt-2'>City</Form.Label>
+          <Form.Control type="text" placeholder="Enter City" name='city' value={newobject.city} onChange={handleChange}  />
+        </Form.Group>  
+        </Row>
+      <Form.Group as={Col} md="12" className="mb-3" controlId="validationCustom05">
+        <Form.Label className='mt-2'>Describe Requirement</Form.Label>
+        <Form.Control as="textarea" rows={3} onChange={handleChange} value={newobject.desc} name='desc'/>
       </Form.Group>
-      <Button type="submit">Submit form</Button>
+      <div className="banner-btn btn-margin w-100 text-center ">
+      <button  type="submit"><span></span>Submit</button>
+        </div>
     </Form>
-    <div>
-    <iframe title='Mhe-movers' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d971.8221972719747!2d77.47848236954536!3d13.017272705848077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3c8526a0017b%3A0x1986975b14433dc9!2s2F8H%2BRJC%2C%20Thigalarapalya%20Main%20Rd%2C%20Peenya%202nd%20Stage%2C%20Vaddarapalya%2C%20Ragavendra%20Industrial%20Estate%2C%20Bengaluru%2C%20Karnataka%20560058!5e0!3m2!1sen!2sin!4v1700226222906!5m2!1sen!2sin" width="100%" height="450"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-    
     </>
   );
 }
