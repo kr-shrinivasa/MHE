@@ -1,6 +1,6 @@
 import React from 'react'
 import {useLocation} from 'react-router-dom';
-import image from "./image (5).png"
+// import image from "./image (5).png"
 
 export default function DeatilsPage() {
   const location = useLocation();

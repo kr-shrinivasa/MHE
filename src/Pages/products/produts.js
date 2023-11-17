@@ -7,6 +7,7 @@ export default function Produts() {
     const [ProductsList, setProductsLists] = useState(product);
     let history = useNavigate();
     function handleclick(){
+      setProductsLists(product)
       history("/products")
     }
     

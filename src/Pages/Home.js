@@ -1,11 +1,11 @@
 import React from 'react'
 import feature from "./image (5).png"
-import pro1 from "../img/img-1.jpg"
-import pro2 from "../img/img-2.jpg"
-import pro3 from "../img/img-3.jpg"
-import pro4 from "../img/pic-1.jpg"
-import pro5 from "../img/pic-2.jpg"
-import pro6 from "../img/pic-3.jpg"
+// import pro1 from "../img/img-1.jpg"
+// import pro2 from "../img/img-2.jpg"
+// import pro3 from "../img/img-3.jpg"
+// import pro4 from "../img/pic-1.jpg"
+// import pro5 from "../img/pic-2.jpg"
+// import pro6 from "../img/pic-3.jpg"
 import Produts from './products/produts'
 import Services from "./products/Services"
 

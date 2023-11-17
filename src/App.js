@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer';
 // import PhotoBox from './components/gallary/PhotoBox';
 // import Gallaryscroll from './components/scroll/Gallaryscroll';
 import { Routes, Route  } from "react-router-dom";
-import About from './Pages/About';
+// import About from './Pages/About';
 import Home from './Pages/Home';
 // import Products from './Pages/Products';
 import Sevices from './Pages/products/Services';
@@ -28,7 +28,6 @@ function App() {
         <Route path="/services" element={< Sevices/>} />
         <Route path="/contact-us" element={< Contactus/>} />
         <Route path="/product-details" element={< DeatilsPage/>} />
-        
       </Routes>
       <Footer/>
       </>
