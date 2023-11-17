@@ -1,0 +1,140 @@
+.header{
+    position: relative;
+    width: 100%;
+    background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./home-back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60vh;
+    text-align: center;
+}
+
+
+.container{
+    
+    width: 90%;
+    margin: 50px auto;
+    text-align: center;
+
+   
+}
+h1{
+    color: black;
+}
+
+
+.image-box{
+    
+    column-count: 4;
+    margin: 20px auto;
+   
+}
+
+
+img{
+    width: 100%
+}
+.add-form{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin:10px auto;
+}
+.center{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  
+}
+.center p{
+    color: white;
+}
+input{
+    width: 78%;
+    padding:  .5rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255,);
+    transition: color 0.5s;
+    border-radius: 20px;
+}
+button{
+    padding: 1rem 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+    z-index: 1;
+    display: inline-block;
+    transition: color 0.5s;
+    position: relative;
+    border: none;
+}
+
+.image-container{
+    height: fit-content;  
+}
+
+button span{
+    width: 0;
+    height: 100%;
+    position:absolute;
+    top: 0;
+    left:0 ;
+    background: black;
+    z-index: -1;
+    transition: 0.5s;
+}
+button:hover span{
+    width: 100%;
+    
+
+}
+button:hover{
+    color:rgb(250, 245, 245);
+}
+
+@media screen and (max-width:770px){
+  
+    .header{
+        height: 40vh;
+    }
+        .container{
+            width: 90%;
+            margin: 20px auto;
+            text-align: center;
+        
+        }
+        
+    .image-box{
+        
+        column-count: 2;
+        margin: 20px auto;
+    
+    }
+    .add-form{
+        width: 80%;
+        
+        margin:10px auto;
+    }
+     button{
+        display: block;
+        margin:10px auto;
+    padding: .5rem 1rem;
+    z-index: 0;
+    
+    }
+    .add-form{
+        width: 100%;
+        padding:  .5rem;
+        font-size: 1rem;
+        background: rgba(255, 255, 255,);
+        transition: color 0.5s;
+        border-radius: 20px;
+        display: block;
+        z-index: 0;
+    }
+    
+}

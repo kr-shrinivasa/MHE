@@ -1,0 +1,14 @@
+
+
+.btn-div{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    margin: auto;
+}
+.btn{
+    background-color: rgb(96, 78, 138);
+}
+h1{
+    margin: 20px 0;
+}
